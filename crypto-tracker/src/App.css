@@ -1,0 +1,190 @@
+/* ===== Estilos Globales ===== */
+body {
+  margin: 0; /* Quita el margen por defecto del navegador */
+  font-family: 'Inter', sans-serif; /* Fuente moderna y legible */
+  background: linear-gradient(to bottom right, #f1f5f9, #e2e8f0); /* Fondo degradado suave */
+  color: #1e293b; /* Color principal del texto */
+}
+
+/* ===== Título de la App ===== */
+.app-title {
+  text-align: center; /* Centra el texto */
+  font-size: 2.5rem; /* Tamaño grande para destacar */
+  margin: 2rem 0; /* Espacio arriba y abajo */
+  font-weight: 700; /* Negrita para resaltar */
+  color: #0f172a; /* Color oscuro para buen contraste */
+  cursor: pointer; /* Cambia cursor para indicar que es clickeable */
+  transition: color 0.3s ease; /* Transición suave al cambiar color */
+}
+
+.app-title:hover {
+  color: #2563eb; /* Cambia a azul al pasar el cursor */
+}
+
+/* ===== Grid de Criptos ===== */
+.crypto-grid {
+  display: grid; /* Usamos CSS Grid para layout flexible */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Columnas adaptables, mínimo 160px */
+  gap: 24px; /* Espacio entre tarjetas */
+  padding: 0 1rem 3rem; /* Espacio interno (padding) horizontal y abajo */
+  max-width: 1000px; /* Ancho máximo para que no se extienda demasiado */
+  margin: 0 auto; /* Centra el grid horizontalmente */
+}
+
+/* ===== Tarjeta Cripto ===== */
+.crypto-card {
+  background-color: #ffffff; /* Fondo blanco para contraste */
+  border-radius: 1rem; /* Bordes redondeados */
+  padding: 1rem; /* Espacio interno */
+  text-align: center; /* Texto centrado */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Sombra sutil para profundidad */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Animaciones suaves al interactuar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crypto-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar cursor */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+}
+
+.crypto-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem; /* Separación debajo del ícono */
+}
+
+.crypto-name {
+  font-size: 1.1rem; /* Tamaño legible */
+  font-weight: 600; /* Semi negrita */
+  color: #1e293b; /* Color del texto */
+}
+
+/* ===== Detalles de Cripto ===== */
+.crypto-detail-card {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin: 2rem auto; /* Centrado con margen vertical */
+  max-width: 700px; /* Limita ancho para lectura cómoda */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); /* Sombra para destacar */
+  text-align: center;
+}
+
+.detail-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.detail-price {
+  font-size: 1.3rem;
+  color: #16a34a; /* Verde para indicar precio */
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.detail-change {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Colores para cambio positivo o negativo */
+.text-green {
+  color: #059669; /* Verde */
+}
+
+.text-red {
+  color: #dc2626; /* Rojo */
+}
+
+/* Botón para volver */
+.back-button {
+  margin-top: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #1e3a8a; /* Azul oscuro */
+  color: white;
+  border: none;
+  border-radius: 0.75rem; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #2563eb; /* Azul más claro al pasar cursor */
+}
+
+/* ===== Mensajes ===== */
+.no-cryptos-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #64748b; /* Gris para mensajes secundarios */
+}
+
+/* ===== Media Queries para Responsividad ===== */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem; /* Reduce tamaño en tabletas */
+  }
+
+  .crypto-detail-card {
+    padding: 1.5rem;
+    max-width: 95%; /* Ocupa casi todo el ancho */
+  }
+
+  .detail-name {
+    font-size: 1.6rem;
+  }
+
+  .detail-price,
+  .detail-change {
+    font-size: 1rem;
+  }
+
+  .crypto-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem; /* Reduce espacios en pantallas medianas */
+  }
+
+  .crypto-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .crypto-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+  }
+
+  .crypto-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .crypto-name {
+    font-size: 0.95rem;
+  }
+
+  .crypto-detail-card {
+    padding: 1rem;
+  }
+
+  .detail-name {
+    font-size: 1.3rem;
+  }
+
+  .detail-price,
+  .detail-change {
+    font-size: 0.95rem;
+  }
+}
